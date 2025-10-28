@@ -1,182 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>The Solar System - Internal CSS</title>
-
-  <style>
-    /* ===== General Page Styling ===== */
-    body {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      font-family: "Verdana", sans-serif;
-      color: #e0f7fa;
-      margin: 25px;
-    }
-
-    h1 {
-      text-align: center;
-      background-color: #1a237e;
-      color: #ffeb3b;
-      padding: 15px;
-      border-radius: 10px;
-    }
-
-    h2 {
-      color: #ffca28;
-      margin-top: 25px;
-    }
-
-    p {
-      font-size: 16px;
-      color: #e0f2f1;
-      line-height: 1.6;
-    }
-
-    /* ===== Lists ===== */
-    ul {
-      background-color: #1a237e;
-      padding: 15px;
-      border-radius: 10px;
-      width: 250px;
-      list-style-type: square;
-    }
-
-    ul li {
-      padding: 5px;
-      color: #ffb300;
-    }
-
-    /* ===== Tables ===== */
-    table {
-      width: 70%;
-      border-collapse: collapse;
-      margin: 25px auto;
-      box-shadow: 0 0 15px rgba(255,255,255,0.2);
-    }
-
-    th, td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: center;
-    }
-
-    th {
-      background-color: #283593;
-      color: white;
-    }
-
-    tr:nth-child(even) {
-      background-color: #37474f;
-    }
-
-    tr:hover {
-      background-color: #455a64;
-    }
-
-    /* ===== Selectors ===== */
-    .highlight {
-      color: #ffcc80;
-      font-weight: bold;
-    }
-
-    #funfact {
-      background-color: #4a148c;
-      padding: 10px;
-      border-left: 5px solid #9575cd;
-      margin-top: 15px;
-    }
-
-    /* ===== Pseudo-classes ===== */
-    a {
-      color: #29b6f6;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    a:hover {
-      color: #b3e5fc;
-      text-decoration: underline;
-    }
-
-    input:focus {
-      border: 2px solid #ffb300;
-      background-color: #283593;
-      color: white;
-      outline: none;
-    }
-
-    /* ===== Pseudo-elements ===== */
-    h2::before {
-      content: "🚀 ";
-    }
-
-    h2::after {
-      content: " 🌌";
-    }
-  </style>
+<meta charset="UTF-8">
+<title>The Solar System - Internal CSS</title>
+<style>
+  body{background:linear-gradient(to right,#0f2027,#203a43,#2c5364);font-family:Verdana;color:#e0f7fa;margin:20px;}
+  h1{text-align:center;background:#1a237e;color:#ffeb3b;padding:15px;border-radius:10px;}
+  h2{color:#ffca28;margin-top:20px;}
+  p{font-size:16px;line-height:1.6;}
+  ul{background:#1a237e;padding:10px;border-radius:10px;width:230px;list-style:square;}
+  li{color:#ffb300;padding:4px;}
+  table{width:70%;margin:20px auto;border-collapse:collapse;box-shadow:0 0 10px rgba(255,255,255,.2);}
+  th,td{border:1px solid #ccc;padding:8px;text-align:center;}
+  th{background:#283593;color:white;}
+  tr:nth-child(even){background:#37474f;}
+  tr:hover{background:#455a64;}
+  .highlight{color:#ffcc80;font-weight:bold;}
+  #funfact{background:#4a148c;padding:10px;border-left:5px solid #9575cd;margin-top:10px;}
+  a{color:#29b6f6;text-decoration:none;font-weight:bold;}
+  a:hover{color:#b3e5fc;text-decoration:underline;}
+  input:focus{border:2px solid #ffb300;background:#283593;color:white;outline:none;}
+  h2::before{content:"🚀 ";} h2::after{content:" 🌌";}
+</style>
 </head>
 
 <body>
+<h1>The Solar System 🌞</h1>
 
-  <h1>The Solar System 🌞</h1>
+<p>The <span class="highlight">Solar System</span> is a collection of planets orbiting the <span class="highlight">Sun</span>.</p>
 
-  <p>
-    The <span class="highlight">Solar System</span> is a vast collection of planets, moons, asteroids, and comets  
-    all orbiting our star — the <span class="highlight">Sun</span>.
-  </p>
+<div id="funfact"><b>Fun Fact:</b> A day on Venus is longer than a year on Venus!</div>
 
-  <div id="funfact">
-    <p><strong>Fun Fact:</strong> A day on Venus is longer than a year on Venus!</p>
-  </div>
+<h2>Planets</h2>
+<ul>
+  <li>Mercury</li><li>Venus</li><li>Earth</li><li>Mars</li>
+  <li>Jupiter</li><li>Saturn</li><li>Uranus</li><li>Neptune</li>
+</ul>
 
-  <h2>Planets in Our Solar System</h2>
-  <ul>
-    <li>Mercury</li>
-    <li>Venus</li>
-    <li>Earth</li>
-    <li>Mars</li>
-    <li>Jupiter</li>
-    <li>Saturn</li>
-    <li>Uranus</li>
-    <li>Neptune</li>
-  </ul>
+<h2>Earth vs Mars</h2>
+<table>
+<tr><th>Feature</th><th>Earth</th><th>Mars</th></tr>
+<tr><td>Atmosphere</td><td>Nitrogen & Oxygen</td><td>Carbon Dioxide</td></tr>
+<tr><td>Color</td><td>Blue & Green</td><td>Red</td></tr>
+<tr><td>Moons</td><td>1</td><td>2</td></tr>
+</table>
 
-  <h2>Earth vs Mars Comparison</h2>
-  <table>
-    <tr>
-      <th>Feature</th>
-      <th>Earth</th>
-      <th>Mars</th>
-    </tr>
-    <tr>
-      <td>Atmosphere</td>
-      <td>Nitrogen & Oxygen</td>
-      <td>Carbon Dioxide</td>
-    </tr>
-    <tr>
-      <td>Color</td>
-      <td>Blue & Green</td>
-      <td>Red</td>
-    </tr>
-    <tr>
-      <td>Moons</td>
-      <td>1 (Moon)</td>
-      <td>2 (Phobos, Deimos)</td>
-    </tr>
-  </table>
+<h2>Join the Space Mission</h2>
+<form><label>Name:</label> <input type="text" placeholder="Focus here"></form>
 
-  <h2>Join the Space Mission</h2>
-  <form>
-    <label>Enter your name:</label>
-    <input type="text" placeholder="Focus here to see effect">
-  </form>
-
-  <p>
-    Learn more about planets at 
-    <a href="https://solarsystem.nasa.gov/" target="_blank">
-      NASA Solar System
-    </a>.
-  </p>
-
+<p>Learn more at <a href="https://solarsystem.nasa.gov/" target="_blank">NASA</a>.</p>
 </body>
 </html>
