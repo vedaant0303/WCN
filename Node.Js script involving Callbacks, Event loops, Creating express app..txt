@@ -1,128 +1,50 @@
-// Import required modules
+// Simple Node.js Example with Callbacks, Promises, and Events
 const express = require("express");
-const EventEmitter = require('events');
-
+const { EventEmitter } = require("events");
 const app = express();
-const myEmitter = new EventEmitter();
+const event = new EventEmitter();
 
-// ---------------- ADVANCED CALLBACK EXAMPLE ----------------
-function fetchDataWithError(callback) {
-  console.log("Fetching data with potential error...");
-  
-  setTimeout(() => {
-    const success = Math.random() > 0.5;
-    if (success) {
-      const data = { id: 1, name: "Node.js Example", status: "success" };
-      callback(null, data); // Success case: error is null
-    } else {
-      callback(new Error("Failed to fetch data"), null); // Error case
-    }
-  }, 2000);
-}
-
-// ---------------- PROMISE EXAMPLE ----------------
-function fetchDataPromise() {
-  return new Promise((resolve, reject) => {
-    console.log("Fetching data with Promise...");
-    setTimeout(() => {
-      const success = Math.random() > 0.5;
-      if (success) {
-        resolve({ id: 2, name: "Promise Example", status: "success" });
-      } else {
-        reject(new Error("Promise-based fetch failed"));
-      }
-    }, 1500);
-  });
-}
-
-// ---------------- EVENT EMITTER EXAMPLE ----------------
-// Setup event listeners
-myEmitter.on('dataReceived', (data) => {
-  console.log('Data received:', data);
-});
-
-myEmitter.on('error', (error) => {
-  console.error('Error occurred:', error);
-});
-
-// ---------------- EVENT LOOP EXAMPLES ----------------
-console.log("Script started");
-
-// Immediate execution (Call Stack)
-console.log("1. This runs first");
-
-// NextTick queue (highest priority in Node.js event loop)
-process.nextTick(() => {
-  console.log("2. This runs after immediate execution but before promises");
-});
-
-// Promise microtask queue
-Promise.resolve().then(() => {
-  console.log("3. This runs after nextTick");
-});
-
-// Timer queue (setTimeout)
-setTimeout(() => {
-  console.log("4. This runs after 1 second");
-}, 1000);
-
-// Immediate callback queue (setImmediate)
-setImmediate(() => {
-  console.log("5. This runs in the check phase of event loop");
-});
-
-console.log("6. This runs immediately after first console.log");
-
-// ---------------- EXPRESS APP ROUTES ----------------
-// Middleware to parse JSON bodies
 app.use(express.json());
 
-// Basic route
-app.get("/", (req, res) => {
-  res.send("<h2>Welcome to Enhanced Node.js Express App 🚀</h2>");
-});
+// ---------------- CALLBACK ----------------
+function getData(cb) {
+  console.log("Fetching data (callback)...");
+  setTimeout(() => Math.random() > 0.5
+    ? cb(null, { id: 1, msg: "Callback success" })
+    : cb(new Error("Callback failed")), 1000);
+}
 
-// Callback example route
-app.get("/callback", (req, res) => {
-  fetchDataWithError((error, result) => {
-    if (error) {
-      res.status(500).json({ error: error.message });
-    } else {
-      res.json({ success: true, data: result });
-    }
-  });
-});
+// ---------------- PROMISE ----------------
+function getDataPromise() {
+  console.log("Fetching data (promise)...");
+  return new Promise((res, rej) =>
+    setTimeout(() => Math.random() > 0.5
+      ? res({ id: 2, msg: "Promise success" })
+      : rej(new Error("Promise failed")), 1000)
+  );
+}
 
-// Promise example route
-app.get("/promise", async (req, res) => {
-  try {
-    const result = await fetchDataPromise();
-    res.json({ success: true, data: result });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+// ---------------- EVENTS ----------------
+event.on("info", d => console.log("Event:", d));
+event.on("error", e => console.error("Error:", e.message));
 
-// Event emitter example route
-app.get("/event", (req, res) => {
-  // Emit an event
-  myEmitter.emit('dataReceived', { timestamp: new Date(), message: "Event triggered" });
-  res.json({ message: "Event emitted successfully" });
-});
+// ---------------- EVENT LOOP DEMO ----------------
+console.log("Start");
+process.nextTick(() => console.log("NextTick"));
+Promise.resolve().then(() => console.log("Promise"));
+setTimeout(() => console.log("Timeout"), 500);
+setImmediate(() => console.log("Immediate"));
+console.log("End");
 
-// Error demonstration route
-app.get("/error", (req, res) => {
-  myEmitter.emit('error', new Error("This is a demonstration error"));
-  res.status(500).json({ message: "Error event emitted" });
+// ---------------- ROUTES ----------------
+app.get("/", (r, s) => s.send("<h2>Node.js Demo 🚀</h2>"));
+app.get("/callback", (r, s) =>
+  getData((e, d) => e ? s.status(500).json({ e: e.message }) : s.json(d))
+);
+app.get("/promise", async (r, s) => {
+  try { s.json(await getDataPromise()); }
+  catch (e) { s.status(500).json({ e: e.message }); }
 });
+app.get("/event", (r, s) => { event.emit("info", "Event triggered"); s.json({ ok: true }); });
 
-// Start the Express server
-app.listen(3000, () => {
-  console.log("✅ Server is running on http://localhost:3000");
-  console.log("Available routes:");
-  console.log("- GET /           : Welcome message");
-  console.log("- GET /callback   : Callback example with error handling");
-  console.log("- GET /promise    : Promise-based example");
-  console.log("- GET /event      : Event emitter example");
-  console.log("- GET /error      : Error event example");
-});
+app.listen(3000, () => console.log("Server running → http://localhost:3000"));
