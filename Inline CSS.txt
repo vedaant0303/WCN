@@ -2,79 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>All About Cats - Inline CSS</title>
+  <title>The Solar System - Inline CSS</title>
 
   <!-- Only for pseudo-classes & pseudo-elements -->
   <style>
     a:hover {
-      color: darkblue;
+      color: gold;
       text-decoration: underline;
     }
 
     h2::before {
-      content: "🐾 ";
+      content: "🚀 ";
     }
 
     h2::after {
-      content: " 🐾";
+      content: " 🌌";
     }
 
     tr:hover {
-      background-color: #f8bbd0;
+      background-color: #424242;
     }
   </style>
 </head>
 
-<body style="background: linear-gradient(to right, #fce4ec, #e3f2fd); font-family: Arial, sans-serif; color: #333; padding: 20px;">
+<body style="background: linear-gradient(to right, #0f2027, #203a43, #2c5364); font-family: Arial, sans-serif; color: #e0f7fa; padding: 20px;">
 
-  <h1 style="text-align:center; background-color:#f8bbd0; color:#4a148c; padding:15px; border-radius:10px;">
-    All About Cats 🐱
+  <h1 style="text-align:center; background-color:#1a237e; color:#ffeb3b; padding:15px; border-radius:10px;">
+    The Solar System 🌞
   </h1>
 
-  <p style="font-size:16px; color:#4e342e;">
-    Cats are <span style="color:#c2185b; font-weight:bold;">curious</span> and <span style="color:#c2185b; font-weight:bold;">independent</span> pets.
-    They are known for their graceful moves and soft purrs!
+  <p style="font-size:16px; color:#e0f2f1;">
+    The Solar System is a <span style="color:#ffcc80; font-weight:bold;">vast</span> and 
+    <span style="color:#ffcc80; font-weight:bold;">mysterious</span> place full of planets, moons, and stars.
   </p>
 
-  <div style="background-color:#ede7f6; padding:10px; border-left:5px solid #7e57c2;">
-    <p><strong>Fun Fact:</strong> Cats can make over 100 different sounds!</p>
+  <div style="background-color:#311b92; padding:10px; border-left:5px solid #9575cd;">
+    <p><strong>Fun Fact:</strong> Jupiter is so large that more than 1,300 Earths could fit inside it!</p>
   </div>
 
-  <h2 style="color:#1a237e; margin-top:25px;">Popular Cat Breeds</h2>
+  <h2 style="color:#ffca28; margin-top:25px;">Planets in Our Solar System</h2>
 
-  <ul style="background-color:#fff9c4; padding:15px; border-radius:10px; width:250px; list-style-type:square;">
-    <li style="padding:5px; color:#e65100;">Persian Cat</li>
-    <li style="padding:5px; color:#e65100;">Siamese Cat</li>
-    <li style="padding:5px; color:#e65100;">Maine Coon</li>
-    <li style="padding:5px; color:#e65100;">Bengal Cat</li>
+  <ul style="background-color:#1a237e; padding:15px; border-radius:10px; width:260px; list-style-type:circle;">
+    <li style="padding:5px; color:#ffb300;">Mercury</li>
+    <li style="padding:5px; color:#ffb300;">Venus</li>
+    <li style="padding:5px; color:#ffb300;">Earth</li>
+    <li style="padding:5px; color:#ffb300;">Mars</li>
+    <li style="padding:5px; color:#ffb300;">Jupiter</li>
+    <li style="padding:5px; color:#ffb300;">Saturn</li>
+    <li style="padding:5px; color:#ffb300;">Uranus</li>
+    <li style="padding:5px; color:#ffb300;">Neptune</li>
   </ul>
 
-  <h2 style="color:#1a237e; margin-top:25px;">Cat vs Dog Comparison</h2>
+  <h2 style="color:#ffca28; margin-top:25px;">Earth vs Mars</h2>
 
-  <table style="width:70%; border-collapse:collapse; margin:25px auto; box-shadow:0 0 10px rgba(0,0,0,0.1);">
+  <table style="width:70%; border-collapse:collapse; margin:25px auto; box-shadow:0 0 10px rgba(255,255,255,0.2);">
     <tr>
-      <th style="border:1px solid #333; padding:10px; background-color:#f48fb1; color:white;">Feature</th>
-      <th style="border:1px solid #333; padding:10px; background-color:#f48fb1; color:white;">Cat</th>
-      <th style="border:1px solid #333; padding:10px; background-color:#f48fb1; color:white;">Dog</th>
+      <th style="border:1px solid #ccc; padding:10px; background-color:#283593; color:#fff;">Feature</th>
+      <th style="border:1px solid #ccc; padding:10px; background-color:#283593; color:#fff;">Earth</th>
+      <th style="border:1px solid #ccc; padding:10px; background-color:#283593; color:#fff;">Mars</th>
     </tr>
-    <tr style="background-color:#fce4ec;">
-      <td style="border:1px solid #333; padding:10px; text-align:center;">Sound</td>
-      <td style="border:1px solid #333; padding:10px; text-align:center;">Meow</td>
-      <td style="border:1px solid #333; padding:10px; text-align:center;">Bark</td>
+    <tr style="background-color:#37474f;">
+      <td style="border:1px solid #ccc; padding:10px; text-align:center;">Atmosphere</td>
+      <td style="border:1px solid #ccc; padding:10px; text-align:center;">Oxygen & Nitrogen</td>
+      <td style="border:1px solid #ccc; padding:10px; text-align:center;">Carbon Dioxide</td>
     </tr>
     <tr>
-      <td style="border:1px solid #333; padding:10px; text-align:center;">Food</td>
-      <td style="border:1px solid #333; padding:10px; text-align:center;">Fish, Milk</td>
-      <td style="border:1px solid #333; padding:10px; text-align:center;">Meat, Bones</td>
+      <td style="border:1px solid #ccc; padding:10px; text-align:center;">Color</td>
+      <td style="border:1px solid #ccc; padding:10px; text-align:center;">Blue & Green</td>
+      <td style="border:1px solid #ccc; padding:10px; text-align:center;">Red</td>
     </tr>
-    <tr style="background-color:#fce4ec;">
-      <td style="border:1px solid #333; padding:10px; text-align:center;">Nature</td>
-      <td style="border:1px solid #333; padding:10px; text-align:center;">Independent</td>
-      <td style="border:1px solid #333; padding:10px; text-align:center;">Loyal</td>
+    <tr style="background-color:#37474f;">
+      <td style="border:1px solid #ccc; padding:10px; text-align:center;">Moons</td>
+      <td style="border:1px solid #ccc; padding:10px; text-align:center;">1 (Moon)</td>
+      <td style="border:1px solid #ccc; padding:10px; text-align:center;">2 (Phobos, Deimos)</td>
     </tr>
   </table>
 
-  <h2 style="color:#1a237e; margin-top:25px;">Adopt a Cat</h2>
+  <h2 style="color:#ffca28; margin-top:25px;">Join the Space Mission</h2>
 
   <form style="margin-bottom:20px;">
     <label style="font-weight:bold;">Enter your name:</label>
@@ -82,9 +86,9 @@
   </form>
 
   <p style="font-size:16px;">
-    Learn more about cats on 
-    <a href="https://www.nationalgeographic.com/animals/mammals/facts/domestic-cat" target="_blank" style="color:#1e88e5; text-decoration:none; font-weight:bold;">
-      National Geographic
+    Learn more about planets on 
+    <a href="https://solarsystem.nasa.gov/" target="_blank" style="color:#29b6f6; text-decoration:none; font-weight:bold;">
+      NASA Solar System
     </a>.
   </p>
 
