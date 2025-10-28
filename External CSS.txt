@@ -1,112 +1,112 @@
-index.html
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>All About Cats</title>
+  <title>Wonders of Space</title>
   <!-- Link to external CSS file -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <h1>All About Cats 🐱</h1>
+  <h1>The Wonders of Space 🌌</h1>
 
-  <p>Cats are <span class="highlight">cute, curious,</span> and graceful creatures.  
-  They are one of the most loved pets across the world!</p>
+  <p>Space is <span class="highlight">vast, mysterious,</span> and filled with endless possibilities.  
+  It continues to inspire scientists and dreamers alike!</p>
 
   <div id="funfact">
-    <p><strong>Fun Fact:</strong> A cat can jump up to six times its length in one leap!</p>
+    <p><strong>Fun Fact:</strong> One day on Venus is longer than one year on Venus!</p>
   </div>
 
-  <h2>Popular Cat Breeds</h2>
+  <h2>Planets in Our Solar System</h2>
   <ul>
-    <li>Persian Cat</li>
-    <li>Siamese Cat</li>
-    <li>Maine Coon</li>
-    <li>Bengal Cat</li>
+    <li>Mercury</li>
+    <li>Venus</li>
+    <li>Earth</li>
+    <li>Mars</li>
+    <li>Jupiter</li>
+    <li>Saturn</li>
+    <li>Uranus</li>
+    <li>Neptune</li>
   </ul>
 
-  <h2>Cat vs Dog Comparison</h2>
+  <h2>Earth vs Mars</h2>
   <table>
     <tr>
       <th>Feature</th>
-      <th>Cat</th>
-      <th>Dog</th>
+      <th>Earth</th>
+      <th>Mars</th>
     </tr>
     <tr>
-      <td>Sound</td>
-      <td>Meow</td>
-      <td>Bark</td>
+      <td>Atmosphere</td>
+      <td>Nitrogen, Oxygen</td>
+      <td>Carbon Dioxide</td>
     </tr>
     <tr>
-      <td>Food</td>
-      <td>Fish, Milk</td>
-      <td>Meat, Bones</td>
+      <td>Color</td>
+      <td>Blue & Green</td>
+      <td>Red</td>
     </tr>
     <tr>
-      <td>Personality</td>
-      <td>Independent</td>
-      <td>Loyal</td>
+      <td>Moons</td>
+      <td>1 (Moon)</td>
+      <td>2 (Phobos, Deimos)</td>
     </tr>
   </table>
 
-  <h2>Adopt a Cat</h2>
+  <h2>Become an Astronaut</h2>
   <form>
     <label>Enter your name: </label>
     <input type="text" placeholder="Focus here to see effect">
   </form>
 
-  <p>Learn more at <a href="https://www.nationalgeographic.com/animals/mammals/facts/domestic-cat" target="_blank">National Geographic</a>.</p>
+  <p>Learn more at <a href="https://solarsystem.nasa.gov/" target="_blank">NASA Solar System</a>.</p>
 </body>
 </html>
 
 
 
 
-style.css
-
 
 /* ===== General Page Styling ===== */
 body {
-  background: linear-gradient(to right, #fff3f3, #e3f2fd);
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   font-family: "Trebuchet MS", sans-serif;
-  color: #333;
+  color: #e0f7fa;
   padding: 20px;
 }
 
 h1 {
   text-align: center;
-  background-color: #f8bbd0;
+  background-color: #283593;
   padding: 15px;
-  color: #4a148c;
+  color: #fff59d;
   border-radius: 10px;
 }
 
 h2 {
-  color: #1a237e;
+  color: #ffca28;
   margin-top: 25px;
 }
 
 /* ===== Paragraphs ===== */
 p {
   font-size: 16px;
-  color: #4e342e;
+  color: #e0f2f1;
   line-height: 1.6;
 }
 
 /* ===== Lists ===== */
 ul {
-  background-color: #fff9c4;
+  background-color: #1a237e;
   padding: 15px;
   border-radius: 10px;
   width: 250px;
-  list-style-type: circle;
+  list-style-type: square;
 }
 
 ul li {
   padding: 6px;
-  color: #e65100;
+  color: #ffb300;
 }
 
 /* ===== Tables ===== */
@@ -114,64 +114,64 @@ table {
   width: 70%;
   border-collapse: collapse;
   margin: 25px auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
 }
 
 th, td {
-  border: 1px solid #555;
+  border: 1px solid #e0e0e0;
   padding: 10px;
   text-align: center;
 }
 
 th {
-  background-color: #f48fb1;
-  color: white;
+  background-color: #5c6bc0;
+  color: #fff;
 }
 
 tr:nth-child(even) {
-  background-color: #fce4ec;
+  background-color: #3949ab;
 }
 
 tr:hover {
-  background-color: #f8bbd0;
+  background-color: #7986cb;
 }
 
 /* ===== Selectors ===== */
 .highlight {
-  color: #c2185b;
+  color: #ffcc80;
   font-weight: bold;
 }
 
 #funfact {
-  background-color: #f3e5f5;
+  background-color: #4a148c;
   padding: 10px;
-  border-left: 5px solid #ab47bc;
+  border-left: 5px solid #d1c4e9;
 }
 
 /* ===== Pseudo-classes ===== */
 a {
-  color: #1e88e5;
+  color: #29b6f6;
   text-decoration: none;
   font-weight: bold;
 }
 
 a:hover {
-  color: #0d47a1;
+  color: #b3e5fc;
   text-decoration: underline;
 }
 
 input:focus {
-  border: 2px solid #f06292;
+  border: 2px solid #ffb300;
   outline: none;
-  background-color: #fce4ec;
+  background-color: #283593;
+  color: white;
 }
 
 /* ===== Pseudo-elements ===== */
 h2::before {
-  content: "🐾 ";
+  content: "🚀 ";
 }
 
 h2::after {
-  content: " 🐾";
+  content: " 🌠";
 }
-
