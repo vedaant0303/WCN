@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>HTML Demo: Elements, Attributes, Frames, Forms & Multimedia</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.4; }
+    section { margin-bottom: 24px; }
+    table { border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: 6px 8px; }
+    .small { font-size: 0.9em; color: #555; }
+    .media { max-width: 100%; height: auto; display: block; margin: 8px 0; }
+  </style>
+</head>
+<body>
+
+  <h1>HTML Demo — Elements, Attributes, Frames, Forms & Multimedia</h1>
+  <p class="small">Simple examples showing how to use common HTML features.</p>
+
+  <!-- Basic Elements & Attributes -->
+  <section>
+    <h2>1. Elements & Attributes (quick examples)</h2>
+    <p title="A short example paragraph">This is a <strong>paragraph</strong> with a <code>title</code> attribute.</p>
+    <p id="example" class="small">An element can have <code>id</code> and <code>class</code> attributes.</p>
+    <p>Link example: <a href="https://www.example.com" target="_blank" rel="noopener">Open example.com</a></p>
+  </section>
+
+  <!-- Frames: use iframe (modern replacement for frameset) -->
+  <section>
+    <h2>2. Frame (iframe)</h2>
+    <p class="small">An inline frame embeds another page. Here we embed example.com (may block if the site disallows embedding).</p>
+    <iframe src="https://www.example.com" width="600" height="200" title="Example site preview" style="border:1px solid #888;">
+      Your browser does not support iframes.
+    </iframe>
+    <p class="small">If the embedded site blocks framing, try replacing the <code>src</code> with a simple page you host or a public page that allows embedding.</p>
+  </section>
+
+  <!-- Forms -->
+  <section>
+    <h2>3. Form: inputs, attributes, and submission</h2>
+    <form action="#" method="get" autocomplete="on" aria-label="Demo form">
+      <table>
+        <tr>
+          <th><label for="name">Name</label></th>
+          <td><input id="name" name="name" type="text" required placeholder="Your name"></td>
+        </tr>
+        <tr>
+          <th><label for="email">Email</label></th>
+          <td><input id="email" name="email" type="email" placeholder="you@example.com"></td>
+        </tr>
+        <tr>
+          <th>Gender</th>
+          <td>
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="fruit">Favorite fruit</label></th>
+          <td>
+            <select id="fruit" name="fruit">
+              <option value="">--Choose--</option>
+              <option value="apple">Apple</option>
+              <option value="banana">Banana</option>
+              <option value="mango">Mango</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="subscribe">Subscribe</label></th>
+          <td><input id="subscribe" name="subscribe" type="checkbox"> Weekly newsletter</td>
+        </tr>
+        <tr>
+          <th><label for="message">Message</label></th>
+          <td><textarea id="message" name="message" rows="4" cols="40" maxlength="300" placeholder="Write something..."></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align:right">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <p class="small">Form attributes used: <code>action</code>, <code>method</code>, <code>required</code>, <code>placeholder</code>, <code>maxlength</code>.</p>
+  </section>
+
+  <!-- Multimedia: Images -->
+  <section>
+    <h2>4. Images (multimedia)</h2>
+    <p>Image with attributes:</p>
+    <!-- small inline SVG data URI to keep file self-contained -->
+    <img class="media" src="data:image/svg+xml;utf8,
+      <svg xmlns='http://www.w3.org/2000/svg' width='400' height='180'>
+        <rect width='100%' height='100%' fill='%23f2f2f2'/>
+        <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='%23000'>
+          Example Image (SVG)
+        </text>
+      </svg>" alt="Example SVG image" width="400" height="180">
+    <p class="small">Attributes: <code>src</code>, <code>alt</code>, <code>width</code>, <code>height</code>.</p>
+  </section>
+
+  <!-- Multimedia: Audio -->
+  <section>
+    <h2>5. Audio</h2>
+    <p class="small">Browser audio player using <code>&lt;audio&gt;</code>. Replace the <code>src</code> with a real file if you have one.</p>
+    <!-- A very short silent audio can be used if available; for this demo, the src is left as an example URL. -->
+    <audio controls preload="none" aria-label="Demo audio player">
+      <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <p class="small">Attributes used: <code>controls</code>, <code>preload</code>, <code>src</code>, <code>type</code>.</p>
+  </section>
+
+  <!-- Multimedia: Video -->
+  <section>
+    <h2>6. Video</h2>
+    <p class="small">Browser video player using <code>&lt;video&gt;</code>. The source shown is public/example — replace with your own file if needed.</p>
+    <video class="media" width="560" height="315" controls poster="data:image/svg+xml;utf8,
+      <svg xmlns='http://www.w3.org/2000/svg' width='560' height='315'>
+        <rect width='100%' height='100%' fill='%23ddd'/>
+        <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%23000'>
+          Video Preview
+        </text>
+      </svg>">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Your browser does not support the video element.
+    </video>
+    <p class="small">Attributes used: <code>controls</code>, <code>width</code>, <code>height</code>, <code>poster</code>.</p>
+  </section>
+
+  <!-- Notes -->
+  <section>
+    <h2>Notes & tips</h2>
+    <ul>
+      <li>Modern replacement for old <code>&lt;frameset&gt;</code> is <code>&lt;iframe&gt;</code>.</li>
+      <li>Always include descriptive <code>alt</code> text for images for accessibility.</li>
+      <li>Use <code>controls</code> on audio/video so users can play/pause/seek.</li>
+      <li>When embedding external sites in <code>iframe</code>, some sites block framing for security (X-Frame-Options).</li>
+    </ul>
+  </section>
+
+</body>
+</html>

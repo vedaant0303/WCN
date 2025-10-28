@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All About Cats - Inline CSS</title>
+
+  <!-- Only for pseudo-classes & pseudo-elements -->
+  <style>
+    a:hover {
+      color: darkblue;
+      text-decoration: underline;
+    }
+
+    h2::before {
+      content: "🐾 ";
+    }
+
+    h2::after {
+      content: " 🐾";
+    }
+
+    tr:hover {
+      background-color: #f8bbd0;
+    }
+  </style>
+</head>
+
+<body style="background: linear-gradient(to right, #fce4ec, #e3f2fd); font-family: Arial, sans-serif; color: #333; padding: 20px;">
+
+  <h1 style="text-align:center; background-color:#f8bbd0; color:#4a148c; padding:15px; border-radius:10px;">
+    All About Cats 🐱
+  </h1>
+
+  <p style="font-size:16px; color:#4e342e;">
+    Cats are <span style="color:#c2185b; font-weight:bold;">curious</span> and <span style="color:#c2185b; font-weight:bold;">independent</span> pets.
+    They are known for their graceful moves and soft purrs!
+  </p>
+
+  <div style="background-color:#ede7f6; padding:10px; border-left:5px solid #7e57c2;">
+    <p><strong>Fun Fact:</strong> Cats can make over 100 different sounds!</p>
+  </div>
+
+  <h2 style="color:#1a237e; margin-top:25px;">Popular Cat Breeds</h2>
+
+  <ul style="background-color:#fff9c4; padding:15px; border-radius:10px; width:250px; list-style-type:square;">
+    <li style="padding:5px; color:#e65100;">Persian Cat</li>
+    <li style="padding:5px; color:#e65100;">Siamese Cat</li>
+    <li style="padding:5px; color:#e65100;">Maine Coon</li>
+    <li style="padding:5px; color:#e65100;">Bengal Cat</li>
+  </ul>
+
+  <h2 style="color:#1a237e; margin-top:25px;">Cat vs Dog Comparison</h2>
+
+  <table style="width:70%; border-collapse:collapse; margin:25px auto; box-shadow:0 0 10px rgba(0,0,0,0.1);">
+    <tr>
+      <th style="border:1px solid #333; padding:10px; background-color:#f48fb1; color:white;">Feature</th>
+      <th style="border:1px solid #333; padding:10px; background-color:#f48fb1; color:white;">Cat</th>
+      <th style="border:1px solid #333; padding:10px; background-color:#f48fb1; color:white;">Dog</th>
+    </tr>
+    <tr style="background-color:#fce4ec;">
+      <td style="border:1px solid #333; padding:10px; text-align:center;">Sound</td>
+      <td style="border:1px solid #333; padding:10px; text-align:center;">Meow</td>
+      <td style="border:1px solid #333; padding:10px; text-align:center;">Bark</td>
+    </tr>
+    <tr>
+      <td style="border:1px solid #333; padding:10px; text-align:center;">Food</td>
+      <td style="border:1px solid #333; padding:10px; text-align:center;">Fish, Milk</td>
+      <td style="border:1px solid #333; padding:10px; text-align:center;">Meat, Bones</td>
+    </tr>
+    <tr style="background-color:#fce4ec;">
+      <td style="border:1px solid #333; padding:10px; text-align:center;">Nature</td>
+      <td style="border:1px solid #333; padding:10px; text-align:center;">Independent</td>
+      <td style="border:1px solid #333; padding:10px; text-align:center;">Loyal</td>
+    </tr>
+  </table>
+
+  <h2 style="color:#1a237e; margin-top:25px;">Adopt a Cat</h2>
+
+  <form style="margin-bottom:20px;">
+    <label style="font-weight:bold;">Enter your name:</label>
+    <input type="text" placeholder="Focus here to see effect" style="padding:5px; border:2px solid #ccc; border-radius:5px;">
+  </form>
+
+  <p style="font-size:16px;">
+    Learn more about cats on 
+    <a href="https://www.nationalgeographic.com/animals/mammals/facts/domestic-cat" target="_blank" style="color:#1e88e5; text-decoration:none; font-weight:bold;">
+      National Geographic
+    </a>.
+  </p>
+
+</body>
+</html>

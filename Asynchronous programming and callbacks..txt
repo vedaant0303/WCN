@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Asynchronous Programming and Callbacks</title>
+</head>
+<body style="font-family: Arial; padding: 20px;">
+
+  <h2>🌐 Asynchronous Programming using Callbacks</h2>
+  <p id="output" style="font-size:18px; color:darkblue;"></p>
+
+  <script>
+    // Step 1: A function that simulates a delay (like fetching data from server)
+    function fetchData(callback) {
+      document.getElementById("output").innerHTML = "Fetching data... Please wait ⏳";
+
+      // setTimeout() is asynchronous – it waits 2 seconds before running the code inside
+      setTimeout(function() {
+        let data = "🐱 Cat data loaded successfully!";
+        callback(data); // calling the callback function
+      }, 2000);
+    }
+
+    // Step 2: The callback function
+    function displayData(result) {
+      document.getElementById("output").innerHTML = result;
+    }
+
+    // Step 3: Calling fetchData and passing displayData as a callback
+    fetchData(displayData);
+
+    // This message prints immediately (shows asynchronous behavior)
+    console.log("This message appears first because fetchData is asynchronous!");
+  </script>
+
+</body>
+</html>

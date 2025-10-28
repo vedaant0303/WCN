@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Basic Example</title>
+</head>
+<body>
+
+    <h1>HTML Elements Example</h1>
+
+    <!-- Paragraph and Attributes -->
+    <p title="This is a paragraph">This is a paragraph with a <b>title attribute</b>.</p>
+
+    <!-- Hyperlink -->
+    <h2>Hyperlink</h2>
+    <p>Visit <a href="https://www.google.com" target="_blank">Google</a> website.</p>
+
+    <!-- Text Formatting -->
+    <h2>Text Formatting</h2>
+    <p>
+        <b>Bold text</b><br>
+        <i>Italic text</i><br>
+        <u>Underlined text</u><br>
+        <strong>Strong text</strong><br>
+        <em>Emphasized text</em><br>
+        <mark>Highlighted text</mark>
+    </p>
+
+    <!-- Lists -->
+    <h2>Lists</h2>
+    <h3>Unordered List</h3>
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+    </ul>
+
+    <h3>Ordered List</h3>
+    <ol>
+        <li>Wake up</li>
+        <li>Brush teeth</li>
+        <li>Have breakfast</li>
+    </ol>
+
+    <!-- Table -->
+    <h2>Table</h2>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>25</td>
+            <td>New York</td>
+        </tr>
+        <tr>
+            <td>Mary</td>
+            <td>22</td>
+            <td>London</td>
+        </tr>
+        <tr>
+            <td>Ravi</td>
+            <td>27</td>
+            <td>Delhi</td>
+        </tr>
+    </table>
+
+</body>
+</html>

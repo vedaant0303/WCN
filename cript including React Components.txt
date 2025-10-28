@@ -1,0 +1,121 @@
+import React, { useState, useRef } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+// ---------------- Component with Props ----------------
+function Welcome(props) {
+  return <h2>Hello, {props.name}! 👋</h2>;
+}
+
+// ---------------- Component with State & Event ----------------
+function Counter() {
+  const [count, setCount] = useState(0); // useState = state variable
+
+  const increment = () => setCount(count + 1);
+  const decrement = () => setCount(count - 1);
+
+  return (
+    <div>
+      <h3>Counter Example (State & Events)</h3>
+      <p>Count: {count}</p>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>−</button>
+    </div>
+  );
+}
+
+// ---------------- Form with Events ----------------
+function FormExample() {
+  const [name, setName] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Hello, " + name);
+  };
+
+  return (
+    <div>
+      <h3>Form Example</h3>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Enter your name"
+          value={name}
+          onChange={(e) => setName(e.target.value)} // onChange event
+        />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+}
+
+// ---------------- Using Refs ----------------
+function FocusInput() {
+  const inputRef = useRef(null);
+
+  const focusField = () => {
+    inputRef.current.focus(); // Access DOM element directly
+  };
+
+  return (
+    <div>
+      <h3>Refs Example</h3>
+      <input ref={inputRef} placeholder="Click button to focus me" />
+      <button onClick={focusField}>Focus Input</button>
+    </div>
+  );
+}
+
+// ---------------- Rendering List with Keys ----------------
+function FruitList() {
+  const fruits = ["Apple", "Banana", "Mango"];
+  return (
+    <div>
+      <h3>List with Keys</h3>
+      <ul>
+        {fruits.map((fruit, index) => (
+          <li key={index}>{fruit}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+// ---------------- Main App Component with Router ----------------
+function App() {
+  return (
+    <Router>
+      <div style={{ textAlign: "center", fontFamily: "Arial" }}>
+        <h1>React Concepts Demo</h1>
+
+        {/* Navigation using Router */}
+        <nav>
+          <Link to="/">Home</Link> |{" "}
+          <Link to="/counter">Counter</Link> |{" "}
+          <Link to="/form">Form</Link> |{" "}
+          <Link to="/refs">Refs</Link> |{" "}
+          <Link to="/list">List</Link>
+        </nav>
+
+        <hr />
+
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Welcome name="Student" />
+                <p>This page shows Props, Components, and Router.</p>
+              </>
+            }
+          />
+          <Route path="/counter" element={<Counter />} />
+          <Route path="/form" element={<FormExample />} />
+          <Route path="/refs" element={<FocusInput />} />
+          <Route path="/list" element={<FruitList />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App;

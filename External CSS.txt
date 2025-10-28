@@ -1,0 +1,177 @@
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All About Cats</title>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>All About Cats 🐱</h1>
+
+  <p>Cats are <span class="highlight">cute, curious,</span> and graceful creatures.  
+  They are one of the most loved pets across the world!</p>
+
+  <div id="funfact">
+    <p><strong>Fun Fact:</strong> A cat can jump up to six times its length in one leap!</p>
+  </div>
+
+  <h2>Popular Cat Breeds</h2>
+  <ul>
+    <li>Persian Cat</li>
+    <li>Siamese Cat</li>
+    <li>Maine Coon</li>
+    <li>Bengal Cat</li>
+  </ul>
+
+  <h2>Cat vs Dog Comparison</h2>
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Cat</th>
+      <th>Dog</th>
+    </tr>
+    <tr>
+      <td>Sound</td>
+      <td>Meow</td>
+      <td>Bark</td>
+    </tr>
+    <tr>
+      <td>Food</td>
+      <td>Fish, Milk</td>
+      <td>Meat, Bones</td>
+    </tr>
+    <tr>
+      <td>Personality</td>
+      <td>Independent</td>
+      <td>Loyal</td>
+    </tr>
+  </table>
+
+  <h2>Adopt a Cat</h2>
+  <form>
+    <label>Enter your name: </label>
+    <input type="text" placeholder="Focus here to see effect">
+  </form>
+
+  <p>Learn more at <a href="https://www.nationalgeographic.com/animals/mammals/facts/domestic-cat" target="_blank">National Geographic</a>.</p>
+</body>
+</html>
+
+
+
+
+style.css
+
+
+/* ===== General Page Styling ===== */
+body {
+  background: linear-gradient(to right, #fff3f3, #e3f2fd);
+  font-family: "Trebuchet MS", sans-serif;
+  color: #333;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  background-color: #f8bbd0;
+  padding: 15px;
+  color: #4a148c;
+  border-radius: 10px;
+}
+
+h2 {
+  color: #1a237e;
+  margin-top: 25px;
+}
+
+/* ===== Paragraphs ===== */
+p {
+  font-size: 16px;
+  color: #4e342e;
+  line-height: 1.6;
+}
+
+/* ===== Lists ===== */
+ul {
+  background-color: #fff9c4;
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+  list-style-type: circle;
+}
+
+ul li {
+  padding: 6px;
+  color: #e65100;
+}
+
+/* ===== Tables ===== */
+table {
+  width: 70%;
+  border-collapse: collapse;
+  margin: 25px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+  border: 1px solid #555;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f48fb1;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #fce4ec;
+}
+
+tr:hover {
+  background-color: #f8bbd0;
+}
+
+/* ===== Selectors ===== */
+.highlight {
+  color: #c2185b;
+  font-weight: bold;
+}
+
+#funfact {
+  background-color: #f3e5f5;
+  padding: 10px;
+  border-left: 5px solid #ab47bc;
+}
+
+/* ===== Pseudo-classes ===== */
+a {
+  color: #1e88e5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #0d47a1;
+  text-decoration: underline;
+}
+
+input:focus {
+  border: 2px solid #f06292;
+  outline: none;
+  background-color: #fce4ec;
+}
+
+/* ===== Pseudo-elements ===== */
+h2::before {
+  content: "🐾 ";
+}
+
+h2::after {
+  content: " 🐾";
+}
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+            text-align: center;
+            margin: 30px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        input {
+            padding: 5px;
+            font-size: 16px;
+        }
+        .output {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Example</h1>
+
+    <!-- Check Even or Odd -->
+    <h2>1️⃣ Check if a Number is Even or Odd</h2>
+    <input type="number" id="num" placeholder="Enter a number">
+    <button onclick="checkEvenOdd()">Check</button>
+    <p class="output" id="result"></p>
+
+    <!-- Array Built-in Functions -->
+    <h2>2️⃣ Array Built-in Functions</h2>
+    <button onclick="arrayFunctions()">Show Array Operations</button>
+    <p class="output" id="arrayResult"></p>
+
+    <!-- Change Background Color -->
+    <h2>3️⃣ Change Background Color</h2>
+    <button onclick="changeColor()">Change Color</button>
+
+    <script>
+        // Function to check even or odd
+        function checkEvenOdd() {
+            let num = document.getElementById("num").value;
+            let result = document.getElementById("result");
+
+            if (num === "") {
+                result.innerHTML = "Please enter a number!";
+            } else if (num % 2 === 0) {
+                result.innerHTML = num + " is Even";
+            } else {
+                result.innerHTML = num + " is Odd";
+            }
+        }
+
+        // Function for array built-in operations
+        function arrayFunctions() {
+            let fruits = ["Apple", "Banana", "Mango"];
+            
+            fruits.push("Orange");      // Add element
+            fruits.sort();              // Sort elements
+            let last = fruits.pop();    // Remove last element
+
+            document.getElementById("arrayResult").innerHTML = 
+                "Fruits after operations: " + fruits.join(", ") +
+                "<br>Removed fruit: " + last;
+        }
+
+        // Function to change background color
+        function changeColor() {
+            let colors = ["lightgreen", "lightpink", "lightyellow", "lightgray", "lightcoral"];
+            let randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+
+</body>
+</html>
