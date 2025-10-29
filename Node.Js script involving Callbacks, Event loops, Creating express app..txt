@@ -1,128 +1,50 @@
+Write a Node.Js script involving Callbacks, Event loops, Creating express app.
+
+// ---------------- CALLBACK EXAMPLE ----------------
+function doSomething(value, callback) {
+  console.log('Processing value:', value);
+  const result = value * 2;
+
+  // "Callback" the original function with the result
+  callback(result);
+}
+
+// Define the callback function
+const myCallback = (finalResult) => {
+  console.log('Callback finished! Result is:', finalResult);
+};
+
+// Pass our callback function into doSomething
+doSomething(10, myCallback);
+
+
+// ---------------- EVENT LOOP EXAMPLE ----------------
+console.log('Start');
+
+setTimeout(() => {
+  console.log('Timer done! (This is the callback from the event loop)');
+}, 1000);
+
+console.log('End');
+
+
+// ---------------- EXPRESS APP EXAMPLE ----------------
 const express = require('express');
-const fs = require('fs');
-
 const app = express();
-const PORT = 3000;
+const port = 3000;
 
-app.use(express.json());
-
-// Callbacks demo
-app.get('/demo-callbacks', (req, res) => {
-  fs.writeFile('example.txt', 'Demo file content', (err) => {
-    if (err) return res.send('Error creating file');
-    
-    fs.readFile('example.txt', 'utf8', (err, data) => {
-      if (err) return res.send('Error reading file');
-      
-      fs.writeFile('output.txt', `Created: ${new Date()}`, (err) => {
-        if (err) return res.send('Error writing file');
-        res.json({ message: 'Callbacks completed!', data });
-      });
-    });
-  });
-});
-
-// Event loop demo
-app.get('/event-loop', (req, res) => {
-  console.log('1. Sync start');
-  
-  setTimeout(() => console.log('4. Timeout'), 0);
-  setImmediate(() => console.log('5. Immediate'));
-  Promise.resolve().then(() => console.log('3. Promise'));
-  process.nextTick(() => console.log('2. NextTick'));
-  
-  console.log('1. Sync end');
-  res.json({ message: 'Check console for event loop order' });
-});
-
-// Basic routes
+// Route with callback for GET request
 app.get('/', (req, res) => {
-  res.json({ 
-    message: 'Express Server Running',
-    endpoints: ['/', '/demo-callbacks', '/event-loop', '/users', '/users/:id']
-  });
+  res.send('Hello from my Express app!');
 });
 
-let users = [
-  { id: 1, name: 'John Doe', email: 'john@example.com' },
-  { id: 2, name: 'Jane Smith', email: 'jane@example.com' }
-];
-
-app.get('/users', (req, res) => {
-  res.json(users);
-});
-
-app.get('/users/:id', (req, res) => {
-  const user = users.find(u => u.id === parseInt(req.params.id));
-  user ? res.json(user) : res.status(404).json({ error: 'User not found' });
-});
-
-app.post('/users', (req, res) => {
-  const newUser = {
-    id: users.length + 1,
-    name: req.body.name,
-    email: req.body.email
-  };
-  users.push(newUser);
-  res.status(201).json(newUser);
-});
-
-// Error handling
-app.use((req, res) => {
-  res.status(404).json({ error: 'Route not found' });
-});
-
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+// Start the server
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
 });
 
 
 
 
-Installation Commands:
-
-# Step 1: Install Node.js (download from https://nodejs.org/)
-
-# Step 2: Create project directory
-mkdir my-express-server
-cd my-express-server
-
-# Step 3: Initialize package.json
-npm init -y
-
-# Step 4: Install Express
 npm install express
-
-# Step 5: Install Nodemon (optional, for development)
-npm install --save-dev nodemon
-
-
-
-Running the server:
-
-# For development (with auto-restart)
-npm run dev
-
-# For production
-npm start
-
-
-
-Testing Endpoints:
-
-# Test the root endpoint
-curl http://localhost:3000/
-
-# Test callbacks endpoint
-curl http://localhost:3000/demo-callbacks
-
-# Test event loop endpoint
-curl http://localhost:3000/event-loop
-
-# Test users endpoint
-curl http://localhost:3000/users
-
-# Test creating a user
-curl -X POST -H "Content-Type: application/json" -d '{"name":"Test User","email":"test@example.com"}' http://localhost:3000/users
-
-
+node app.js
