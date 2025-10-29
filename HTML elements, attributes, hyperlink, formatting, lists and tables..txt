@@ -1,70 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>HTML Basic Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Elements Example</title>
 </head>
 <body>
-
-    <h1>HTML Elements Example</h1>
-
-    <!-- Paragraph and Attributes -->
-    <p title="This is a paragraph">This is a paragraph with a <b>title attribute</b>.</p>
-
-    <!-- Hyperlink -->
-    <h2>Hyperlink</h2>
-    <p>Visit <a href="https://www.google.com" target="_blank">Google</a> website.</p>
-
-    <!-- Text Formatting -->
-    <h2>Text Formatting</h2>
-    <p>
-        <b>Bold text</b><br>
-        <i>Italic text</i><br>
-        <u>Underlined text</u><br>
-        <strong>Strong text</strong><br>
-        <em>Emphasized text</em><br>
-        <mark>Highlighted text</mark>
-    </p>
-
+    <!-- Heading Elements -->
+    <h1>Main Heading</h1>
+    <h2>Sub Heading</h2>
+    
+    <!-- Paragraph with formatting -->
+    <p>This is a <strong>bold text</strong> and this is <em>italic text</em>.</p>
+    
+    <!-- Hyperlink with attributes -->
+    <a href="https://www.example.com" target="_blank" title="Visit Example">Visit Example Website</a>
+    
     <!-- Lists -->
-    <h2>Lists</h2>
     <h3>Unordered List</h3>
     <ul>
-        <li>Apple</li>
-        <li>Banana</li>
-        <li>Orange</li>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
     </ul>
-
+    
     <h3>Ordered List</h3>
     <ol>
-        <li>Wake up</li>
-        <li>Brush teeth</li>
-        <li>Have breakfast</li>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
     </ol>
-
+    
     <!-- Table -->
-    <h2>Table</h2>
-    <table border="1" cellpadding="5">
+    <h3>Student Table</h3>
+    <table border="1">
         <tr>
             <th>Name</th>
             <th>Age</th>
-            <th>City</th>
+            <th>Grade</th>
         </tr>
         <tr>
             <td>John</td>
-            <td>25</td>
-            <td>New York</td>
+            <td>20</td>
+            <td>A</td>
         </tr>
         <tr>
-            <td>Mary</td>
-            <td>22</td>
-            <td>London</td>
-        </tr>
-        <tr>
-            <td>Ravi</td>
-            <td>27</td>
-            <td>Delhi</td>
+            <td>Jane</td>
+            <td>19</td>
+            <td>B</td>
         </tr>
     </table>
-
 </body>
 </html>
